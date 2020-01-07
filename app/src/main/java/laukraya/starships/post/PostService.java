@@ -9,4 +9,7 @@ public interface PostService {
     @GET("starships/{id}")
          Call<Post> starshipPorId(@Path("id") int id);
 
+    @GET("starships")
+        Call<Rsp> starshipList();
+
 }
