@@ -1,10 +1,10 @@
-package laukraya.starships.post;
+package laukraya.starships.swapi;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class Post implements Serializable {
+public class Starship implements Serializable {
 
     @SerializedName("name")
     private String name;
@@ -16,9 +16,9 @@ public class Post implements Serializable {
     private String manufacturer;
 
 
-    public Post() {}
+    public Starship() {}
 
-    public Post(String name, String model, String manufacturer) {
+    public Starship(String name, String model, String manufacturer) {
         this.name = name;
         this.model = model;
         this.manufacturer = manufacturer;
@@ -32,7 +32,7 @@ public class Post implements Serializable {
 
     @Override
     public String toString() {
-        return "Post{" +
+        return "Starship{" +
                 "name='" + name + '\'' +
                 ", model='" + model + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +

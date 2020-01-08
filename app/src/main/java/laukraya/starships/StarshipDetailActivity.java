@@ -5,21 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
-import laukraya.starships.post.Post;
+import laukraya.starships.swapi.Starship;
 
 public class StarshipDetailActivity extends AppCompatActivity {
 
     private TextView textViewStarshipName;
-    private Post starship;
+    private Starship starship;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_starship_detail);
 
-        starship = (Post) getIntent().getSerializableExtra("starship");
+        starship = (Starship) getIntent().getSerializableExtra("starship");
 
         textViewStarshipName = findViewById(R.id.textViewStarshipName);
 

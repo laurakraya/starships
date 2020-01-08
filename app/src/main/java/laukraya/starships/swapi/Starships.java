@@ -1,15 +1,15 @@
-package laukraya.starships.post;
+package laukraya.starships.swapi;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Rsp {
+public class Starships {
 
     @SerializedName("results")
-    private List<Post> results;
+    private List<Starship> results;
 
-    public List<Post> getResults() {
+    public List<Starship> getResults() {
         return results;
     }
 }

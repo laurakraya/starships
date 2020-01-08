@@ -1,7 +1,6 @@
 package laukraya.starships;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,25 +8,24 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import laukraya.starships.post.Post;
+import laukraya.starships.swapi.Starship;
 
 public class RecyclerAdapterStarships extends RecyclerView.Adapter<RecyclerAdapterStarships.StarshipViewHolder> {
 
     private Context context;
-    private List<Post> posts;
+    private List<Starship> starships;
     private OnClickListener onClickListener;
 
-    public RecyclerAdapterStarships(Context context, List<Post> posts, OnClickListener onClickListener) {
+    public RecyclerAdapterStarships(Context context, List<Starship> starships, OnClickListener onClickListener) {
         this.context = context;
-        this.posts = posts;
+        this.starships = starships;
         this.onClickListener = onClickListener;
     }
 
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
+    public void setStarships(List<Starship> starships) {
+        this.starships = starships;
         notifyDataSetChanged();
     }
 
@@ -40,15 +38,15 @@ public class RecyclerAdapterStarships extends RecyclerView.Adapter<RecyclerAdapt
     //DATA BINDING
     @Override
     public void onBindViewHolder(RecyclerAdapterStarships.StarshipViewHolder holder, int position) {
-        holder.textViewName.setText(posts.get(position).getName());
-        holder.textViewModel.setText(posts.get(position).getModel());
-        holder.textViewModel.setText(posts.get(position).getManufacturer());
+        holder.textViewName.setText(starships.get(position).getName());
+        holder.textViewModel.setText(starships.get(position).getModel());
+        holder.textViewModel.setText(starships.get(position).getManufacturer());
     }
     //NECESITO DECIRLE LA CANTIDAD DE ITEMS AL RV
     @Override
     public int getItemCount() {
-        if(posts != null){
-            return posts.size();
+        if(starships != null){
+            return starships.size();
         }
         return 0;
 

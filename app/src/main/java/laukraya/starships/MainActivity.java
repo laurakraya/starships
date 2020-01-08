@@ -5,19 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import laukraya.starships.post.Post;
-import laukraya.starships.post.PostService;
-import laukraya.starships.post.RetroFitClient;
-import laukraya.starships.post.Rsp;
+import laukraya.starships.swapi.Starship;
+import laukraya.starships.swapi.StarshipService;
+import laukraya.starships.swapi.RetroFitClient;
+import laukraya.starships.swapi.Starships;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -45,28 +43,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getStarships(final View view) {
-        PostService postService = RetroFitClient.recuperarRetrofit().create(PostService.class);
-        Call<Rsp> call = postService.starshipList();
-        call.enqueue(new Callback<Rsp>() {
+        StarshipService starshipService = RetroFitClient.recuperarRetrofit().create(StarshipService.class);
+        Call<Starships> call = starshipService.starshipList();
+        call.enqueue(new Callback<Starships>() {
             @Override
-            public void onResponse(Call<Rsp> call, Response<Rsp> response) {
-                List<Post> posts = response.body().getResults();
-                System.out.println(posts);
-                toStarshipListActivity(posts);
+            public void onResponse(Call<Starships> call, Response<Starships> response) {
+                List<Starship> starships = response.body().getResults();
+                System.out.println(starships);
+                toStarshipListActivity(starships);
             }
 
             @Override
-            public void onFailure(Call<Rsp> call, Throwable t) {
+            public void onFailure(Call<Starships> call, Throwable t) {
                 System.out.println(t + "ACÁ");
             }
         });
     }
 
-    private void toStarshipListActivity(List<Post> posts) {
+    private void toStarshipListActivity(List<Starship> starships) {
         Intent intentToStarshipListActivity = new Intent(this, StarshipListActivity.class);
-        if(posts != null) {
-            ArrayList<Post> starshipsAL = (ArrayList<Post>) posts;
-            intentToStarshipListActivity.putExtra("posts", starshipsAL);
+        if(starships != null) {
+            ArrayList<Starship> starshipsAL = (ArrayList<Starship>) starships;
+            intentToStarshipListActivity.putExtra("starships", starshipsAL);
         }
         startActivity(intentToStarshipListActivity);
     }
