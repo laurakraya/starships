@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/welcome_msg"
         android:textColor="@color/colorYellow"
-        app:layout_constraintBottom_toTopOf="@+id/editTextId"
+        app:layout_constraintBottom_toTopOf="@+id/buttonToShipListActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,19 +32,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.556" />
-
-    <EditText
-        android:id="@+id/editTextId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/edit_text_id"
-        android:inputType="number"
-        android:textColor="@color/colorYellow"
-        app:layout_constraintBottom_toTopOf="@+id/buttonToShipListActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

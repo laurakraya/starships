@@ -30,4 +30,12 @@ public class Post implements Serializable {
 
     public String getManufacturer() {return manufacturer;}
 
+    @Override
+    public String toString() {
+        return "Post{" +
+                "name='" + name + '\'' +
+                ", model='" + model + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                '}';
+    }
 }

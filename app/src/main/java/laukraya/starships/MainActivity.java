@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private TextView textViewWelcomeMsg;
     private Button buttonToShipListActivity;
-    private EditText editTextId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         textViewWelcomeMsg = findViewById(R.id.textViewWelcomeMsg);
         buttonToShipListActivity = findViewById(R.id.buttonToShipListActivity);
-        editTextId = findViewById(R.id.editTextId);
 
         buttonToShipListActivity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,36 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 getStarships(v);
             }
         });
-    }
-
-    private void getStarshipPorId(final View view) {
-
-        //progressDialog = new ProgressDialog(this);
-        //progressDialog.setMessage("Cargando...");
-        //progressDialog.show();
-
-        //fragmentDialog
-        //formas de mostrar msj de cargando, puede ser con librería externa
-
-        int idStarship = Integer.parseInt(editTextId.getText().toString());
-
-        PostService postService = RetroFitClient.recuperarRetrofit().create(PostService.class);
-        Call<Post> call = postService.starshipPorId(idStarship);
-        call.enqueue(new Callback<Post>() {
-            @Override
-            public void onResponse(Call<Post> call, Response<Post> response) {
-                Post post = response.body();
-                toStarshipDetailActivity(post);
-            }
-
-            @Override
-            public void onFailure(Call<Post> call, Throwable t) {
-                //progressDialog.dismiss();
-            }
-        });
-
-
-
     }
 
     private void getStarships(final View view) {
@@ -101,15 +69,6 @@ public class MainActivity extends AppCompatActivity {
             intentToStarshipListActivity.putExtra("posts", starshipsAL);
         }
         startActivity(intentToStarshipListActivity);
-    }
-
-    private void toStarshipDetailActivity(Post post) {
-        Intent intentToStarshipDetailActivity = new Intent(this, StarshipDetailActivity.class);
-        if(post != null) {
-            String name = post.getName();
-            intentToStarshipDetailActivity.putExtra("name", name);
-        }
-        startActivity(intentToStarshipDetailActivity);
     }
 
 }
