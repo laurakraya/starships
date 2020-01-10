@@ -2,4 +2,8 @@
     <string name="app_name">Starships</string>
     <string name="go_btn_text">Go to List</string>
     <string name="welcome_msg">STAR WARS STARSHIP</string>
+    <string name="detail_name">Name: </string>
+    <string name="detail_model">Model: </string>
+    <string name="detail_manufacturer">Manufacturer: </string>
+    <string name="detail_no_info"> - </string>
 </resources>

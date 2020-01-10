@@ -11,7 +11,9 @@ import laukraya.starships.swapi.Starship;
 
 public class StarshipDetailActivity extends AppCompatActivity {
 
-    private TextView textViewStarshipName;
+    private TextView textViewName;
+    private TextView textViewModel;
+    private TextView textViewManufacturer;
     private Starship starship;
 
     @Override
@@ -21,9 +23,13 @@ public class StarshipDetailActivity extends AppCompatActivity {
 
         starship = (Starship) getIntent().getSerializableExtra("starship");
 
-        textViewStarshipName = findViewById(R.id.textViewStarshipName);
+        textViewName = findViewById(R.id.textViewName);
+        textViewModel = findViewById(R.id.textViewModel);
+        textViewManufacturer = findViewById(R.id.textViewManufacturer);
 
-        textViewStarshipName.setText(starship.getName());
+        textViewName.setText(starship.getName());
+        textViewModel.setText(starship.getModel());
+        textViewManufacturer.setText(starship.getManufacturer());
 
         Toolbar toolbar = findViewById(R.id.toolbarStarshipDetail);
 
