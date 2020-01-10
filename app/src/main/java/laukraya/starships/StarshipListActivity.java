@@ -1,12 +1,14 @@
 package laukraya.starships;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 
@@ -22,6 +24,14 @@ public class StarshipListActivity extends AppCompatActivity implements RecyclerA
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_starship_list);
 
+        Toolbar toolbar = findViewById(R.id.toolbarStarships);
+
+        toolbar.setTitle("Starships List");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
         starships = (ArrayList<Starship>) getIntent().getSerializableExtra("starships");
 
         recyclerViewStarships = findViewById(R.id.recyclerViewStarships);
@@ -35,6 +45,17 @@ public class StarshipListActivity extends AppCompatActivity implements RecyclerA
         RecyclerAdapterStarships recyclerAdapterStarships = new RecyclerAdapterStarships(this, starships, this);
         recyclerViewStarships.setAdapter(recyclerAdapterStarships);
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
