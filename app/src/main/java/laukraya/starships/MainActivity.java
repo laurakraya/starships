@@ -6,7 +6,6 @@ import androidx.appcompat.widget.Toolbar;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -51,19 +50,24 @@ public class MainActivity extends AppCompatActivity {
 
     private void getStarships(final View view) {
 
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Cargando...");
+        progressDialog.show();
+
         StarshipService starshipService = RetroFitClient.recuperarRetrofit().create(StarshipService.class);
         Call<Starships> call = starshipService.starshipList();
         call.enqueue(new Callback<Starships>() {
             @Override
             public void onResponse(Call<Starships> call, Response<Starships> response) {
                 List<Starship> starships = response.body().getResults();
-                System.out.println(starships);
+                progressDialog.dismiss();
                 toStarshipListActivity(starships);
+
             }
 
             @Override
             public void onFailure(Call<Starships> call, Throwable t) {
-                System.out.println(t + "ACÁ");
+                progressDialog.dismiss();
             }
         });
 
