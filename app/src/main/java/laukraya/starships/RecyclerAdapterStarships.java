@@ -39,8 +39,6 @@ public class RecyclerAdapterStarships extends RecyclerView.Adapter<RecyclerAdapt
     @Override
     public void onBindViewHolder(RecyclerAdapterStarships.StarshipViewHolder holder, int position) {
         holder.textViewName.setText(starships.get(position).getName());
-        holder.textViewModel.setText(starships.get(position).getModel());
-        holder.textViewModel.setText(starships.get(position).getManufacturer());
     }
     //NECESITO DECIRLE LA CANTIDAD DE ITEMS AL RV
     @Override
@@ -54,8 +52,6 @@ public class RecyclerAdapterStarships extends RecyclerView.Adapter<RecyclerAdapt
 
     public class StarshipViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView textViewName;
-        TextView textViewModel;
-        TextView textViewManufacturer;
 
         OnClickListener onClickListener;
 
@@ -63,8 +59,6 @@ public class RecyclerAdapterStarships extends RecyclerView.Adapter<RecyclerAdapt
         public StarshipViewHolder(View itemView, OnClickListener onClickListener) {
             super(itemView);
             textViewName = itemView.findViewById(R.id.textViewName);
-            textViewModel = itemView.findViewById(R.id.textViewModel);
-            textViewManufacturer = itemView.findViewById(R.id.textViewManufacturer);
             this.onClickListener = onClickListener;
 
             itemView.setOnClickListener(this);

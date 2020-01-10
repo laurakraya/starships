@@ -40,6 +40,7 @@ public class StarshipListActivity extends AppCompatActivity implements RecyclerA
         recyclerViewStarships.setLayoutManager(layoutManager);
 
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, layoutManager.getOrientation());
+        dividerItemDecoration.setDrawable(this.getResources().getDrawable(R.drawable.rv_line_divider));
         recyclerViewStarships.addItemDecoration(dividerItemDecoration);
 
         RecyclerAdapterStarships recyclerAdapterStarships = new RecyclerAdapterStarships(this, starships, this);

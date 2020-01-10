@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Starships</string>
-    <string name="go_btn_text">GO!</string>
+    <string name="go_btn_text">Go to List</string>
     <string name="welcome_msg">STAR WARS STARSHIP</string>
-    <string name="edit_text_id">Ingrese un Id</string>
 </resources>
