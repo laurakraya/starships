@@ -1,6 +1,7 @@
 package laukraya.starships;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -31,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toolbar toolbar = findViewById(R.id.toolbarMain);
+
+        toolbar.setTitle("Starships");
+        setSupportActionBar(toolbar);
+
         textViewWelcomeMsg = findViewById(R.id.textViewWelcomeMsg);
         buttonToShipListActivity = findViewById(R.id.buttonToShipListActivity);
 
@@ -43,21 +49,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getStarships(final View view) {
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Cargando...");
+        progressDialog.show();
+
         StarshipService starshipService = RetroFitClient.recuperarRetrofit().create(StarshipService.class);
         Call<Starships> call = starshipService.starshipList();
         call.enqueue(new Callback<Starships>() {
             @Override
             public void onResponse(Call<Starships> call, Response<Starships> response) {
                 List<Starship> starships = response.body().getResults();
-                System.out.println(starships);
+                progressDialog.dismiss();
                 toStarshipListActivity(starships);
+
             }
 
             @Override
             public void onFailure(Call<Starships> call, Throwable t) {
-                System.out.println(t + "ACÁ");
+                progressDialog.dismiss();
             }
         });
+
     }
 
     private void toStarshipListActivity(List<Starship> starships) {

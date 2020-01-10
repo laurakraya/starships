@@ -4,15 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StarshipDetailActivity">
+    tools:context=".StarshipDetailActivity"
+    >
 
-    <TextView
-        android:id="@+id/textViewStarshipName"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarStarshipDetail"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewLabelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarStarshipDetail"
+        style="@style/DetailInfo" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        style="@style/DetailInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_no_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textAlignment="viewEnd"
+        app:layout_constraintStart_toEndOf="@+id/textViewLabelName"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarStarshipDetail" />
+
+    <TextView
+        android:id="@+id/textViewLabelModel"
+        style="@style/DetailInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_model"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelName" />
+
+    <TextView
+        android:id="@+id/textViewModel"
+        style="@style/DetailInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_no_info"
+        android:textAlignment="viewEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewLabelName"
+        app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+    <TextView
+        android:id="@+id/textViewLabelManufacturer"
+        style="@style/DetailInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_manufacturer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelModel" />
+
+    <TextView
+        android:id="@+id/textViewManufacturer"
+        style="@style/DetailInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_no_info"
+        android:textAlignment="viewEnd"
+        android:paddingStart="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewLabelModel"
+        app:layout_constraintTop_toBottomOf="@+id/textViewModel" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
