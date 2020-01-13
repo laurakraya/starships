@@ -9,7 +9,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +28,9 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
-    private TextView textViewWelcomeMsg;
+    //private TextView textViewWelcomeMsg;
     private Button buttonToShipListActivity;
+    private ImageView imageViewLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle("Starships");
         setSupportActionBar(toolbar);
 
-        textViewWelcomeMsg = findViewById(R.id.textViewWelcomeMsg);
+        //textViewWelcomeMsg = findViewById(R.id.textViewWelcomeMsg);
         buttonToShipListActivity = findViewById(R.id.buttonToShipListActivity);
 
         buttonToShipListActivity.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
                 getStarships(v);
             }
         });
+
+        ImageView imageViewLogo = findViewById(R.id.imageViewLogo);
+
+        Glide.with(this).load("https://logosmarcas.com/wp-content/uploads/2018/05/Star-Wars-S%C3%ADmbolo.png").into(imageViewLogo);
     }
 
     private void getStarships(final View view) {

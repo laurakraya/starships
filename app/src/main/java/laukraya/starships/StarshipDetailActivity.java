@@ -40,6 +40,7 @@ public class StarshipDetailActivity extends AppCompatActivity {
         textViewClass = findViewById(R.id.textViewClass);
 
         textViewName.setText(starship.getName());
+        textViewName.setAllCaps(true);
         textViewModel.setText(starship.getModel());
         textViewManufacturer.setText(starship.getManufacturer());
         textViewCost.setText(starship.getCost());
