@@ -5,5 +5,11 @@
     <string name="detail_name">Name: </string>
     <string name="detail_model">Model: </string>
     <string name="detail_manufacturer">Manufacturer: </string>
+    <string name="detail_cost">Cost: </string>
+    <string name="detail_speed">Speed: </string>
+    <string name="detail_crew">Crew: </string>
+    <string name="detail_passengers">Passengers: </string>
+    <string name="detail_cargo">Cargo Capacity: </string>
+    <string name="detail_class">Starship Class: </string>
     <string name="detail_no_info"> - </string>
 </resources>

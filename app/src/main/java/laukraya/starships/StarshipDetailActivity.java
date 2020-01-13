@@ -11,10 +11,16 @@ import laukraya.starships.swapi.Starship;
 
 public class StarshipDetailActivity extends AppCompatActivity {
 
+    private Starship starship;
     private TextView textViewName;
     private TextView textViewModel;
     private TextView textViewManufacturer;
-    private Starship starship;
+    private TextView textViewCost;
+    private TextView textViewSpeed;
+    private TextView textViewCrew;
+    private TextView textViewPassengers;
+    private TextView textViewCargo;
+    private TextView textViewClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +32,22 @@ public class StarshipDetailActivity extends AppCompatActivity {
         textViewName = findViewById(R.id.textViewName);
         textViewModel = findViewById(R.id.textViewModel);
         textViewManufacturer = findViewById(R.id.textViewManufacturer);
+        textViewCost = findViewById(R.id.textViewCost);
+        textViewSpeed = findViewById(R.id.textViewSpeed);
+        textViewCrew = findViewById(R.id.textViewCrew);
+        textViewPassengers = findViewById(R.id.textViewPassengers);
+        textViewCargo = findViewById(R.id.textViewCargo);
+        textViewClass = findViewById(R.id.textViewClass);
 
         textViewName.setText(starship.getName());
         textViewModel.setText(starship.getModel());
         textViewManufacturer.setText(starship.getManufacturer());
+        textViewCost.setText(starship.getCost());
+        textViewSpeed.setText(starship.getSpeed());
+        textViewCrew.setText(starship.getCrew());
+        textViewPassengers.setText(starship.getPassengers());
+        textViewCargo.setText(starship.getCargo());
+        textViewClass.setText(starship.getStarship_class());
 
         Toolbar toolbar = findViewById(R.id.toolbarStarshipDetail);
 

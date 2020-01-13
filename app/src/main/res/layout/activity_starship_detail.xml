@@ -25,58 +25,168 @@
         android:text="@string/detail_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarStarshipDetail"
-        style="@style/DetailInfo" />
+        style="@style/DetailInfo.Labels" />
 
     <TextView
         android:id="@+id/textViewName"
-        style="@style/DetailInfo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/detail_no_info"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textAlignment="viewEnd"
         app:layout_constraintStart_toEndOf="@+id/textViewLabelName"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarStarshipDetail" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarStarshipDetail"
+        style="@style/DetailInfo"/>
 
     <TextView
         android:id="@+id/textViewLabelModel"
-        style="@style/DetailInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/detail_model"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLabelName" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelName"
+        style="@style/DetailInfo.Labels"/>
 
     <TextView
         android:id="@+id/textViewModel"
-        style="@style/DetailInfo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/detail_no_info"
-        android:textAlignment="viewEnd"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewLabelName"
-        app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+        app:layout_constraintStart_toEndOf="@+id/textViewLabelModel"
+        app:layout_constraintTop_toBottomOf="@+id/textViewName"
+        style="@style/DetailInfo"/>
 
     <TextView
         android:id="@+id/textViewLabelManufacturer"
-        style="@style/DetailInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/detail_manufacturer"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLabelModel" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelModel"
+        style="@style/DetailInfo.Labels"/>
 
     <TextView
         android:id="@+id/textViewManufacturer"
-        style="@style/DetailInfo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/detail_no_info"
-        android:textAlignment="viewEnd"
-        android:paddingStart="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewLabelModel"
-        app:layout_constraintTop_toBottomOf="@+id/textViewModel" />
+        app:layout_constraintStart_toEndOf="@+id/textViewLabelManufacturer"
+        app:layout_constraintTop_toBottomOf="@+id/textViewModel"
+        style="@style/DetailInfo"/>
+
+    <TextView
+        android:id="@+id/textViewLabelCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_cost"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelManufacturer"
+        style="@style/DetailInfo.Labels"/>
+
+    <TextView
+        android:id="@+id/textViewCost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_no_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewLabelCost"
+        app:layout_constraintTop_toBottomOf="@+id/textViewManufacturer"
+        style="@style/DetailInfo"/>
+
+    <TextView
+        android:id="@+id/textViewLabelSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_manufacturer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelCost"
+        style="@style/DetailInfo.Labels"/>
+
+    <TextView
+        android:id="@+id/textViewSpeed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_no_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewLabelSpeed"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCost"
+        style="@style/DetailInfo"/>
+
+    <TextView
+        android:id="@+id/textViewLabelCrew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_crew"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelSpeed"
+        style="@style/DetailInfo.Labels"/>
+
+    <TextView
+        android:id="@+id/textViewCrew"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_no_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewLabelCrew"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSpeed"
+        style="@style/DetailInfo"/>
+
+    <TextView
+        android:id="@+id/textViewLabelPassengers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_passengers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelCrew"
+        style="@style/DetailInfo.Labels"/>
+
+    <TextView
+        android:id="@+id/textViewPassengers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_no_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewLabelPassengers"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCrew"
+        style="@style/DetailInfo"/>
+
+    <TextView
+        android:id="@+id/textViewLabelCargo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_cargo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelPassengers"
+        style="@style/DetailInfo.Labels"/>
+
+    <TextView
+        android:id="@+id/textViewCargo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_no_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewLabelCargo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPassengers"
+        style="@style/DetailInfo"/>
+
+    <TextView
+        android:id="@+id/textViewLabelClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_class"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelCargo"
+        style="@style/DetailInfo.Labels"/>
+
+    <TextView
+        android:id="@+id/textViewClass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_no_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewLabelClass"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCargo"
+        style="@style/DetailInfo"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
