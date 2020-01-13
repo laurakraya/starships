@@ -28,9 +28,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
-    //private TextView textViewWelcomeMsg;
     private Button buttonToShipListActivity;
-    private ImageView imageViewLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle("Starships");
         setSupportActionBar(toolbar);
 
-        //textViewWelcomeMsg = findViewById(R.id.textViewWelcomeMsg);
         buttonToShipListActivity = findViewById(R.id.buttonToShipListActivity);
 
         buttonToShipListActivity.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<Starships> call, Response<Starships> response) {
                 List<Starship> starships = response.body().getResults();
                 progressDialog.dismiss();
-                Log.i("ok", "TODO BIEEEEEEN");
                 toStarshipListActivity(starships);
 
             }
@@ -78,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Starships> call, Throwable t) {
                 progressDialog.dismiss();
-                Log.i("ERRRRRRRORRRRRR", "ERRORRRRRRR");
             }
         });
 
